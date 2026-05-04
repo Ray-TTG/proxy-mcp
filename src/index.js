@@ -44,7 +44,7 @@ process.on("unhandledRejection", (reason) => {
     await initAuth();
     app.listen(PORT, () => {
       console.log(`[${new Date().toISOString()}] Proxy MCP running on http://localhost:${PORT}`);
-      console.log(`Connect from One Intelligence: URL = http://localhost:${PORT}, header x-api-key = <your PROXY_API_KEY>`);
+      console.log(`Connect from One Intelligence: URL = http://10.0.80.11:${PORT}/v1/mcp/powerbi, header x-api-key = ${API_KEY}`);
     });
   } catch (err) {
     console.error("Startup failed:", err);

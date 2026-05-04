@@ -25,32 +25,17 @@ Go to Azure Portal → Microsoft Entra ID → App Registrations → New Registra
 Give it any name (e.g. powerbi-proxy)
 Under Supported account types, leave the default (single tenant)
 Click Register
-Copy the Application (client) ID — you'll need this shortly
+Copy the Application (client) ID — you'll need this shortly.
 
-Add a redirect URI
+Add a redirect URI.
 
 Go to Authentication → Add a platform → Mobile and desktop applications
 Check the box for http://localhost
-Click Configure, then Save
+Click Configure, then Save.
 
 
 ⚠️ You must use Mobile and desktop applications, not "Web". The Web platform requires HTTPS
 and won't work with MSAL node's loopback redirect.
-
-Add Power BI permissions
-
-Go to API Permissions → Add a permission → Power BI Service
-Choose Delegated permissions
-Add the permissions your use case needs — at minimum:
-
-Dataset.Read.All
-Report.Read.All
-
-
-Click Add permissions
-
-
-You do not need to grant admin consent for delegated permissions — the user grants them at login.
 
 
 ### Step 2 — Find your Tenant ID

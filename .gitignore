@@ -1,2 +1,3 @@
 node_modules/
 dist/
+.msal_cache.json

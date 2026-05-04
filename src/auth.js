@@ -3,11 +3,16 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import { exec } from "child_process";
 
 const CACHE_FILE = ".msal_cache.json";
-const CLIENT_ID = "3f91d008-958e-48f4-a425-c1eca23cb052"; // VS Code Azure Resources app
+const CLIENT_ID = process.env.AZURE_CLIENT_ID; // VS Code Azure Resources app
 const SCOPES = ["https://analysis.windows.net/powerbi/api/.default", "offline_access"];
 
 if (!process.env.AZURE_TENANT_ID) {
   console.error("ERROR: AZURE_TENANT_ID is not set in .env");
+  process.exit(1);
+}
+
+if (!process.env.CLIENT_ID) {
+  console.error("ERROR: AZURE_CLIENT_ID is not set in .env");
   process.exit(1);
 }
 
