@@ -1,3 +1,4 @@
 node_modules/
 dist/
 .msal_cache.json
+pat_admiray.txt
