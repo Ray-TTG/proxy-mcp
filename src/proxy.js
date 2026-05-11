@@ -7,6 +7,7 @@ export function createPowerBIProxy() {
     target: UPSTREAM,
     changeOrigin: true,
     selfHandleResponse: false, // stream SSE directly, no buffering
+    pathRewrite: { '^/': '/v1/mcp/powerbi' },
     on: {
       proxyReq: (proxyReq, req) => {
         // Authorization header is already set by the middleware in index.js

@@ -11,7 +11,7 @@ if (!process.env.AZURE_TENANT_ID) {
   process.exit(1);
 }
 
-if (!process.env.CLIENT_ID) {
+if (!process.env.AZURE_CLIENT_ID) {
   console.error("ERROR: AZURE_CLIENT_ID is not set in .env");
   process.exit(1);
 }
